@@ -61,7 +61,3 @@ function createDirectoryContents(templatePath, newProjectPath) {
     }
   });
 }
-
-module.exports = {
-  createDirectoryContents: createDirectoryContents
-}

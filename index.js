@@ -1,3 +1,5 @@
+#!/usr/bin/env/ node
+
 const CURR_DIR = process.cwd()
 const inquirer = require('inquirer');
 const fs = require('fs')
@@ -44,6 +46,8 @@ function createDirectoryContents(templatePath, newProjectPath) {
 
     // get stats about the current file
     const stats = fs.statSync(origFilePath);
+    // NPM recursively goes through nested directories and renames .gitignore files to .npmignore
+    if (file === '.npmignore') file = '.gitignore';
 
     if (stats.isFile()) {
       const contents = fs.readFileSync(origFilePath, 'utf8');

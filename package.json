@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/abircb/project-generator/issues"
   },
-  "homepage": "https://github.com/abircb/project-generator#readme"
+  "homepage": "https://github.com/abircb/project-generator#readme",
+  "bin": {
+    "generate": "./index.js"
+  }
 }

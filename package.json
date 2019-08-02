@@ -1,0 +1,22 @@
+{
+  "name": "project-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abircb/project-generator.git"
+  },
+  "author": "Abir Bhushan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abircb/project-generator/issues"
+  },
+  "homepage": "https://github.com/abircb/project-generator#readme"
+}

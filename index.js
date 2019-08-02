@@ -23,7 +23,6 @@ const QUESTIONS = [{
   }
 ];
 
-
 inquirer.prompt(QUESTIONS)
   .then((answers) => {
     const projectChoice = answers['project-choice'];

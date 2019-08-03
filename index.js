@@ -32,9 +32,10 @@ inquirer.prompt(QUESTIONS)
     fs.mkdirSync(`${CURR_DIR}/${projectName}`);
 
     createDirectoryContents(templatePath, projectName)
+    console.log("Fin.")
   })
   .catch((error) => {
-    console.log(error + '\nVisit: https://github.com/abircb/project-generator/issues')
+    console.error(error + '\nVisit: https://github.com/abircb/project-generator/issues')
   });
 
 function createDirectoryContents(templatePath, newProjectPath) {

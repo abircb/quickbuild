@@ -3,6 +3,7 @@
 const CURR_DIR = process.cwd()
 const inquirer = require('inquirer');
 const fs = require('fs')
+const fileGenerator = require('./lib/file-generator.js')
 
 const CHOICES = fs.readdirSync(`${CURR_DIR}/templates`);
 
@@ -31,34 +32,9 @@ inquirer.prompt(QUESTIONS)
 
     fs.mkdirSync(`${CURR_DIR}/${projectName}`);
 
-    createDirectoryContents(templatePath, projectName)
+    fileGenerator.createDirectoryContents(templatePath, projectName)
     console.log("Fin.")
   })
   .catch((error) => {
     console.error(error + '\nVisit: https://github.com/abircb/project-generator/issues')
   });
-
-function createDirectoryContents(templatePath, newProjectPath) {
-  const filesToCreate = fs.readdirSync(templatePath);
-
-  filesToCreate.forEach(file => {
-    const origFilePath = `${templatePath}/${file}`;
-
-    // get stats about the current file
-    const stats = fs.statSync(origFilePath);
-    // NPM recursively goes through nested directories and renames .gitignore files to .npmignore
-    if (file === '.npmignore') file = '.gitignore';
-
-    if (stats.isFile()) {
-      const contents = fs.readFileSync(origFilePath, 'utf8');
-
-      const writePath = `${CURR_DIR}/${newProjectPath}/${file}`;
-      fs.writeFileSync(writePath, contents, 'utf8');
-    } else if (stats.isDirectory()) {
-      fs.mkdirSync(`${CURR_DIR}/${newProjectPath}/${file}`);
-
-      // recursive call
-      createDirectoryContents(`${templatePath}/${file}`, `${newProjectPath}/${file}`);
-    }
-  });
-}

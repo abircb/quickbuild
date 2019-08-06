@@ -1,11 +1,8 @@
 {
-  "name": "project-generator",
+  "name": "quickbuild",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +14,17 @@
   },
   "homepage": "https://github.com/abircb/project-generator#readme",
   "bin": {
-    "generate": "./index.js"
-  }
+    "@your_npm_username/structure": "bin/structure.js",
+    "structure": "bin/structure.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "esm": "^3.2.25"
+  },
+  "keywords": [
+    "cli",
+    "quickbuild"
+  ]
 }

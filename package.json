@@ -1,30 +1,39 @@
 {
   "name": "quickbuild",
   "version": "1.0.0",
-  "description": "",
-  "main": "./index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": "git+https://github.com/abircb/project-generator.git",
-  "author": "Abir Bhushan",
-  "license": "ISC",
+  "description": "A simple project generator with an emphasis on speed",
+  "main": "src/index.js",
+  "repository": "git+https://github.com/abircb/quickbuild.git",
+  "author": "The Random DevTools Project",
+  "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://github.com/abircb/project-generator/issues"
+    "url": "https://github.com/abircb/quickbuild/issues"
   },
-  "homepage": "https://github.com/abircb/project-generator#readme",
-  "bin": {
-    "@your_npm_username/structure": "bin/structure.js",
-    "structure": "bin/structure.js"
-  },
+  "homepage": "https://github.com/abircb/quickbuild#readme",
+  "bin": "bin/quickbuild",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "esm": "^3.2.25"
+    "arg": "^4.1.0",
+    "chalk": "^2.4.2",
+    "covgen": "^3.1.0",
+    "esm": "^3.2.18",
+    "execa": "^1.0.0",
+    "gitignore": "^0.6.0",
+    "inquirer": "^6.2.2",
+    "listr": "^0.14.3",
+    "ncp": "^2.0.0",
+    "pkg-install": "^0.2.0",
+    "spdx-license-list": "^5.0.0"
   },
   "keywords": [
     "cli",
     "quickbuild"
+  ],
+  "files": [
+    "bin/",
+    "src/",
+    "templates/"
   ]
 }

@@ -104,8 +104,7 @@ export async function createProject(options) {
           }),
         skip: () =>
           !options.runInstall ?
-          'Pass --install to automatically install dependencies' :
-          undefined,
+          'Pass --install to automatically install dependencies' : undefined,
       },
     ], {
       exitOnError: false,

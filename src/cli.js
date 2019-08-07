@@ -1,32 +1,31 @@
 import arg from 'arg';
 import inquirer from 'inquirer';
-import { createProject } from './main';
+import {
+  createProject
+} from './main';
 
 function parseArgumentsIntoOptions(rawArgs) {
-  const args = arg(
-    {
-      '--git': Boolean,
-      '--yes': Boolean,
-      '--install': Boolean,
-      '-g': '--git',
-      '-y': '--yes',
-      '-i': '--install'
-    },
-    {
-      argv: rawArgs.slice(2),
-    }
-  );
+  const args = arg({
+    '--git': Boolean,
+    '--yes': Boolean,
+    '--install': Boolean,
+    '-g': '--git',
+    '-y': '--yes',
+    '-i': '--install'
+  }, {
+    argv: rawArgs.slice(2),
+  });
   return {
     skipPrompts: args['--yes'] || false,
     git: args['--git'] || false,
     template: args._[0],
     runInstall: args['--install'] || false,
-    projectName: ''
+    projectName: 'quickestbuild'
   };
 }
 
 async function promptForMissingOptions(options) {
-  const defaultTemplate = 'unknown';
+  const defaultTemplate = 'Static Webpage';
   if (options.skipPrompts) {
     return {
       ...options,
@@ -34,12 +33,20 @@ async function promptForMissingOptions(options) {
     };
   }
 
-  const questions = [];
+  const questions = [{
+    name: 'projectName',
+    type: 'input',
+    message: 'Project name:',
+    validate: function(input) {
+      if (/^([A-Za-z\-\_\d])+$/.test(input)) return true;
+      else return 'Name may only include letters, numbers, underscores and hashes';
+    }
+  }];
   if (!options.template) {
     questions.push({
       type: 'list',
       name: 'template',
-      message: 'Please choose which project template to use',
+      message: 'Choose a project structure',
       choices: ['Atom UI', 'Chrome Extension', 'Express.js server', 'Node.js server (advanced)', 'Node.js server', 'React-Redux', 'Static Webpage', 'Typescript'],
       default: defaultTemplate,
     });
@@ -49,21 +56,8 @@ async function promptForMissingOptions(options) {
     questions.push({
       type: 'confirm',
       name: 'git',
-      message: 'Should a git be initialized?',
+      message: 'Initialize git?',
       default: false,
-    });
-  }
-
-  if(!options.projectName) {
-    questions.push({
-      type: 'input',
-      name: 'projectName',
-      message: 'Project name:',
-      validate: function(input) {
-        if (/^([A-Za-z\-\_\d])+$/.test(input)) return true;
-        else return 'Name may only include letters, numbers, underscores and hashes';
-      },
-      default: 'unnamed',
     });
   }
 
@@ -72,7 +66,7 @@ async function promptForMissingOptions(options) {
     ...options,
     template: options.template || answers.template,
     git: options.git || answers.git,
-    projectName: options.projectName
+    projectName: answers.projectName
   };
 }
 

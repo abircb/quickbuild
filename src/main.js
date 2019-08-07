@@ -5,9 +5,13 @@ import gitignore from 'gitignore';
 import Listr from 'listr';
 import ncp from 'ncp';
 import path from 'path';
-import { projectInstall } from 'pkg-install';
+import {
+  projectInstall
+} from 'pkg-install';
 import license from 'spdx-license-list/licenses/MIT';
-import { promisify } from 'util';
+import {
+  promisify
+} from 'util';
 
 const access = promisify(fs.access);
 const writeFile = promisify(fs.writeFile);
@@ -22,8 +26,9 @@ async function copyTemplateFiles(options) {
 
 async function createGitignore(options) {
   const file = fs.createWriteStream(
-    path.join(options.targetDirectory, '.gitignore'),
-    { flags: 'a' }
+    path.join(options.targetDirectory, '.gitignore'), {
+      flags: 'a'
+    }
   );
   return writeGitignore({
     type: 'Node',
@@ -59,7 +64,8 @@ export async function createProject(options) {
   };
 
   const templateDir = path.resolve(
-    new URL(import.meta.url).pathname,
+    new URL(
+      import.meta.url).pathname,
     '../../templates',
     options.template
   );
@@ -73,8 +79,7 @@ export async function createProject(options) {
   }
 
   const tasks = new Listr(
-    [
-      {
+    [{
         title: 'Copy project files',
         task: () => copyTemplateFiles(options),
       },
@@ -98,12 +103,11 @@ export async function createProject(options) {
             cwd: options.targetDirectory,
           }),
         skip: () =>
-          !options.runInstall
-            ? 'Pass --install to automatically install dependencies'
-            : undefined,
+          !options.runInstall ?
+          'Pass --install to automatically install dependencies' :
+          undefined,
       },
-    ],
-    {
+    ], {
       exitOnError: false,
     }
   );

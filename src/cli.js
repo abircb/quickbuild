@@ -7,12 +7,10 @@ import {
 function parseArgumentsIntoOptions(rawArgs) {
   const args = arg({
     '--git': Boolean,
-    '--npm': Boolean,
     '--quickestbuild': Boolean,
     '--install': Boolean,
     '--verbose': Boolean,
     '-g': '--git',
-    '-n': '--npm',
     '-q': '--quickestbuild',
     '-i': '--install',
     '-v': '--verbose'

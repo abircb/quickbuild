@@ -74,30 +74,30 @@ export async function createProject(options) {
   try {
     await access(templateDir, fs.constants.R_OK);
   } catch (err) {
-    console.error('%s Invalid template name', chalk.red.bold('ERROR'));
+    console.error('%s Invalid project structure', chalk.red.bold('ERROR'));
     process.exit(1);
   }
 
   const tasks = new Listr(
     [{
-        title: 'Copy project files',
+        title: 'Copying project files',
         task: () => copyTemplateFiles(options),
       },
       {
-        title: 'Create gitignore',
+        title: 'Creating gitignore',
         task: () => createGitignore(options),
       },
       {
-        title: 'Create License',
+        title: 'Creating LICENSE',
         task: () => createLicense(options),
       },
       {
-        title: 'Initialize git',
+        title: 'Initializing git',
         task: () => initGit(options),
         enabled: () => options.git,
       },
       {
-        title: 'Install dependencies',
+        title: 'Installing dependencies',
         task: () =>
           projectInstall({
             cwd: options.targetDirectory,

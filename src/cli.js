@@ -7,16 +7,21 @@ import {
 function parseArgumentsIntoOptions(rawArgs) {
   const args = arg({
     '--git': Boolean,
-    '--yes': Boolean,
+    '--npm': Boolean,
+    '--quickestbuild': Boolean,
     '--install': Boolean,
+    '--verbose': Boolean,
     '-g': '--git',
-    '-y': '--yes',
-    '-i': '--install'
+    '-n': '--npm',
+    '-q': '--quickestbuild',
+    '-i': '--install',
+    '-v': '--verbose'
   }, {
     argv: rawArgs.slice(2),
   });
   return {
-    skipPrompts: args['--yes'] || false,
+    skipPrompts: args['--quickestbuild'] || false,
+    verbose: args['--verbose'] || false,
     git: args['--git'] || false,
     template: args._[0],
     runInstall: args['--install'] || false,
@@ -25,7 +30,7 @@ function parseArgumentsIntoOptions(rawArgs) {
 }
 
 async function promptForMissingOptions(options) {
-  const defaultTemplate = 'Static Webpage';
+  const defaultTemplate = 'quickestbuild';
   if (options.skipPrompts) {
     return {
       ...options,
@@ -42,13 +47,14 @@ async function promptForMissingOptions(options) {
       else return 'Name may only include letters, numbers, underscores and hashes';
     }
   }];
+
   if (!options.template) {
     questions.push({
       type: 'list',
       name: 'template',
       message: 'Choose a project structure',
       choices: ['Atom UI', 'Chrome Extension', 'Express.js server', 'Node.js server (advanced)', 'Node.js server', 'React-Redux', 'Static Webpage', 'Typescript'],
-      default: defaultTemplate,
+      default: defaultTemplate
     });
   }
 
@@ -57,7 +63,7 @@ async function promptForMissingOptions(options) {
       type: 'confirm',
       name: 'git',
       message: 'Initialize git?',
-      default: false,
+      default: false
     });
   }
 

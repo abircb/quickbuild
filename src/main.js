@@ -75,6 +75,7 @@ export async function createProject(options) {
     await access(templateDir, fs.constants.R_OK);
   } catch (err) {
     console.error('%s Invalid project structure', chalk.red.bold('ERROR'));
+    console.error('If this persists, raise an issure on https://github.com/abircb/quickbuild');
     process.exit(1);
   }
 

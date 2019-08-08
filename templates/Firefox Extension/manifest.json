@@ -23,9 +23,16 @@
   	"notifications"
   	/* boilerplate - delete if not required for you application" */
   ],
-  
-  "content_security_policy": ""
+  "content_security_policy": "script-src 'self' https://example.com; object-src 'self'",
+
+  "content_scripts": [
+    {
+      "exclude_matches": ["*://developer.mozilla.org/*"],
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["borderify.js"]
+    }
+  ]
 }
 /*
-  More here: https://developer.chrome.com/extensions/manifest
+  More here: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json
 */

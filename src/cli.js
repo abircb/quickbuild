@@ -51,7 +51,7 @@ async function promptForMissingOptions(options) {
       type: 'list',
       name: 'template',
       message: 'Choose a project structure',
-      choices: ['Atom UI', 'Chrome Extension', 'Electron Quick Start', 'Express.js server', 'Node.js server (advanced)', 'Node.js server', 'React-Redux', 'Static Webpage', 'Typescript'],
+      choices: ['Atom UI', 'Chrome Extension', 'Electron App Quick Start', 'Electron App (Advanced)', 'Express.js server', 'Node.js server (advanced)', 'Node.js server', 'React-Redux', 'Static Webpage', 'Typescript'],
       default: defaultTemplate
     });
   }

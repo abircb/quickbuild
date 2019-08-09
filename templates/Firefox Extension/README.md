@@ -1,1 +1,1 @@
-# My Firefox Extension
+# Firefox Extension

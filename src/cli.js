@@ -40,6 +40,7 @@ async function promptForMissingOptions(options) {
     return {
       ...options,
       template: options.template || defaultTemplate,
+      license: 'MIT License'
     };
   }
 

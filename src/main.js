@@ -1,10 +1,10 @@
-import chalk from 'chalk';
-import execa from 'execa';
-import fs from 'fs';
-import gitignore from 'gitignore';
-import Listr from 'listr';
-import ncp from 'ncp';
-import path from 'path';
+const chalk = require('chalk');
+const execa = require('execa');
+const fs = require('fs');
+const gitignore = require('gitignore');
+const Listr = require('Listr');
+const ncp = require('ncp');
+const path = require('path');
 import {
   projectInstall
 } from 'pkg-install';
@@ -40,20 +40,20 @@ async function createGitignore(options) {
 }
 
 async function createLicense(options) {
-  console.log(options)
   const CURR_DIR = process.cwd()
   const targetPath = path.join(options.targetDirectory, 'LICENSE');
   try {
     const license = await generateLicense(options)
+    console.log(license.name)
+    const licenseContent = license.licenseText
+      .replace('<year>', new Date().getFullYear())
+      .replace('<copyright holders>', `${options.name} (${options.email})`);
+    return writeFile(targetPath, licenseContent, 'utf8');
   } catch (err) {
-    console.error('%s Invalid license', chalk.red.bold('ERROR'));
+    console.error('%s Invalid LICENSE', chalk.red.bold('ERROR'));
     console.error('If this persists, raise an issue on https://github.com/abircb/quickbuild');
     process.exit(1);
   }
-  const licenseContent = license.licenseText
-    .replace('<year>', new Date().getFullYear())
-    .replace('<copyright holders>', `${options.name} (${options.email})`);
-  return writeFile(targetPath, licenseContent, 'utf8');
 }
 
 async function initGit(options) {

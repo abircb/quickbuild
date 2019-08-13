@@ -8,10 +8,9 @@ const path = require('path');
 import {
   projectInstall
 } from 'pkg-install';
-//import license from 'spdx-license-list/licenses/MIT';
 import {
   generateLicense
-} from './license';
+} from '../lib/license';
 import {
   promisify
 } from 'util';

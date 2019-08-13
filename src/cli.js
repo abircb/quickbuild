@@ -10,10 +10,14 @@ function parseArgumentsIntoOptions(rawArgs) {
     '--quickestbuild': Boolean,
     '--install': Boolean,
     '--verbose': Boolean,
+    '--mit': Boolean,
+    '--apache': Boolean,
+    '--bsd': Boolean,
     '-g': '--git',
     '-q': '--quickestbuild',
     '-i': '--install',
-    '-v': '--verbose'
+    '-v': '--verbose',
+    '-l': '--license'
   }, {
     argv: rawArgs.slice(2),
   });
@@ -21,6 +25,9 @@ function parseArgumentsIntoOptions(rawArgs) {
     skipPrompts: args['--quickestbuild'] || false,
     verbose: args['--verbose'] || false,
     git: args['--git'] || false,
+    license_MIT: args['--mit'] || false,
+    license_Apache: args['--apache'] || false,
+    license_BSD: args['--bsd'] || false,
     template: args._[0],
     runInstall: args['--install'] || false,
     projectName: 'quickestbuild'
@@ -65,12 +72,23 @@ async function promptForMissingOptions(options) {
     });
   }
 
+  if(!options.license_MIT && !options.license_Apache && !options.license_BSD) {
+    questions.push({
+      type: 'list',
+      name: 'license',
+      message: 'Choose a LICENSE',
+      choices: ['Apache License 2.0', 'MIT License', 'BSD 2-Clause', 'CC-BY-2.0', 'Linux OpenIB', 'Custom'],
+      default: false
+    });
+  }
+
   const answers = await inquirer.prompt(questions);
   return {
     ...options,
     template: options.template || answers.template,
     git: options.git || answers.git,
-    projectName: answers.projectName
+    projectName: answers.projectName,
+    license: options.license || options.license_BSD || options.license_MIT || options.license_Apache || answers.license
   };
 }
 

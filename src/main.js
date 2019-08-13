@@ -8,7 +8,10 @@ import path from 'path';
 import {
   projectInstall
 } from 'pkg-install';
-import license from 'spdx-license-list/licenses/MIT';
+//import license from 'spdx-license-list/licenses/MIT';
+import {
+  generateLicense
+} from './license';
 import {
   promisify
 } from 'util';
@@ -37,8 +40,16 @@ async function createGitignore(options) {
 }
 
 async function createLicense(options) {
+  console.log(options)
   const CURR_DIR = process.cwd()
   const targetPath = path.join(options.targetDirectory, 'LICENSE');
+  try {
+    const license = await generateLicense(options)
+  } catch (err) {
+    console.error('%s Invalid license', chalk.red.bold('ERROR'));
+    console.error('If this persists, raise an issue on https://github.com/abircb/quickbuild');
+    process.exit(1);
+  }
   const licenseContent = license.licenseText
     .replace('<year>', new Date().getFullYear())
     .replace('<copyright holders>', `${options.name} (${options.email})`);
@@ -75,7 +86,7 @@ export async function createProject(options) {
     await access(templateDir, fs.constants.R_OK);
   } catch (err) {
     console.error('%s Invalid project structure', chalk.red.bold('ERROR'));
-    console.error('If this persists, raise an issure on https://github.com/abircb/quickbuild');
+    console.error('If this persists, raise an issue on https://github.com/abircb/quickbuild');
     process.exit(1);
   }
 

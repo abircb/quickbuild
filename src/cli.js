@@ -76,12 +76,12 @@ async function promptForMissingOptions(options) {
     });
   }
 
-  if(!options.license_MIT && !options.license_Apache && !options.license_BSD && !options.unlicensed) {
+  if (!options.license_MIT && !options.license_Apache && !options.license_BSD && !options.unlicensed) {
     questions.push({
       type: 'list',
       name: 'license',
       message: 'Choose a LICENSE',
-      choices: ['Apache License 2.0', 'MIT License', 'BSD 2-Clause', 'CC-BY-2.0', 'Linux OpenIB', 'Custom', 'Unlicensed'],
+      choices: ['Apache License 2.0', 'Academic Free License v3.0', 'MIT License', 'BSD 2-Clause', 'CC-BY-2.0', 'GNU General Public License v3.0', 'Linux OpenIB', 'Microsoft Public License', 'Custom', 'Unlicensed'],
       default: false
     });
   }

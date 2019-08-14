@@ -41,7 +41,7 @@ async function createGitignore(options) {
 async function createLicense(options) {
   const CURR_DIR = process.cwd()
   const targetPath = path.join(options.targetDirectory, 'LICENSE');
-  if(options.unlicensed) {
+  if (options.unlicensed) {
     return null;
   }
   try {
@@ -104,6 +104,7 @@ export async function createProject(options) {
       {
         title: 'Creating LICENSE',
         task: () => createLicense(options),
+        enabled: () => !options.unlicensed,
       },
       {
         title: 'Initializing git',
@@ -126,6 +127,6 @@ export async function createProject(options) {
   );
 
   await tasks.run();
-  console.log('%s Project ready', chalk.green.bold('FIN'));
+  console.log('%s Project ready', chalk.green.bold('DONE'));
   return true;
 }

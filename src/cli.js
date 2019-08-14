@@ -1,5 +1,6 @@
-import arg from 'arg';
-import inquirer from 'inquirer';
+const arg = require('arg')
+const chalk = require('chalk');
+const inquirer = require('inquirer')
 import {
   createProject
 } from './main';
@@ -13,11 +14,12 @@ function parseArgumentsIntoOptions(rawArgs) {
     '--mit': Boolean,
     '--apache': Boolean,
     '--bsd': Boolean,
+    '--unlicensed': Boolean,
     '-g': '--git',
     '-q': '--quickestbuild',
     '-i': '--install',
     '-v': '--verbose',
-    '-l': '--license'
+    '-u': '--unlicensed'
   }, {
     argv: rawArgs.slice(2),
   });
@@ -28,6 +30,7 @@ function parseArgumentsIntoOptions(rawArgs) {
     license_MIT: args['--mit'] || false,
     license_Apache: args['--apache'] || false,
     license_BSD: args['--bsd'] || false,
+    unlicensed: args['--unlicensed'] || false,
     template: args._[0],
     runInstall: args['--install'] || false,
     projectName: 'quickestbuild'
@@ -73,12 +76,12 @@ async function promptForMissingOptions(options) {
     });
   }
 
-  if(!options.license_MIT && !options.license_Apache && !options.license_BSD) {
+  if(!options.license_MIT && !options.license_Apache && !options.license_BSD && !options.unlicensed) {
     questions.push({
       type: 'list',
       name: 'license',
       message: 'Choose a LICENSE',
-      choices: ['Apache License 2.0', 'MIT License', 'BSD 2-Clause', 'CC-BY-2.0', 'Linux OpenIB', 'Custom'],
+      choices: ['Apache License 2.0', 'MIT License', 'BSD 2-Clause', 'CC-BY-2.0', 'Linux OpenIB', 'Custom', 'Unlicensed'],
       default: false
     });
   }
@@ -89,7 +92,8 @@ async function promptForMissingOptions(options) {
     template: options.template || answers.template,
     git: options.git || answers.git,
     projectName: answers.projectName,
-    license: options.license || options.license_BSD || options.license_MIT || options.license_Apache || answers.license
+    license: options.license || options.license_BSD || options.license_MIT || options.license_Apache || answers.license,
+    unlicensed: options.unlicensed
   };
 }
 

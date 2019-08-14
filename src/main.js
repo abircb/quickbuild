@@ -41,6 +41,9 @@ async function createGitignore(options) {
 async function createLicense(options) {
   const CURR_DIR = process.cwd()
   const targetPath = path.join(options.targetDirectory, 'LICENSE');
+  if(options.unlicensed) {
+    return null;
+  }
   try {
     const license = await generateLicense(options)
     console.log(license.name)
@@ -49,7 +52,7 @@ async function createLicense(options) {
       .replace('<copyright holders>', `${options.name} (${options.email})`);
     return writeFile(targetPath, licenseContent, 'utf8');
   } catch (err) {
-    console.error('%s Invalid LICENSE', chalk.red.bold('ERROR'));
+    console.error('%s LICENSE error', chalk.red.bold('ERROR'));
     console.error('If this persists, raise an issue on https://github.com/abircb/quickbuild');
     process.exit(1);
   }
@@ -123,6 +126,6 @@ export async function createProject(options) {
   );
 
   await tasks.run();
-  console.log('%s Project ready', chalk.green.bold('DONE'));
+  console.log('%s Project ready', chalk.green.bold('FIN'));
   return true;
 }

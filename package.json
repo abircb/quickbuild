@@ -1,19 +1,28 @@
 {
   "name": "quickbuild",
-  "version": "1.0.0",
-  "description": "A simple project generator with an emphasis on speed",
+  "version": "1.0.6",
+  "description": "A mature, feature-complete application generator with an emphasis on speed",
+  "repository": "https://github.com/abircb/quickbuild.git",
   "main": "src/index.js",
-  "repository": "git+https://github.com/abircb/quickbuild.git",
+  "keywords": [
+    "quickbuild",
+    "application-generator",
+    "application-skeleton",
+    "project-generator",
+    "project-manager",
+    "cli"
+  ],
   "author": "The Random DevTools Project",
   "license": "Apache License 2.0",
-  "bugs": {
-    "url": "https://github.com/abircb/quickbuild/issues"
+  "engines": {
+    "node": ">=4.0.0"
   },
-  "homepage": "https://github.com/abircb/quickbuild#readme",
-  "bin": "bin/quickbuild",
-  "publishConfig": {
-    "access": "public"
-  },
+  "files": [
+    "bin/",
+    "src/",
+    "templates/",
+    "lib/"
+  ],
   "dependencies": {
     "arg": "^4.1.0",
     "chalk": "^2.4.2",
@@ -27,13 +36,8 @@
     "pkg-install": "^0.2.0",
     "spdx-license-list": "^5.0.0"
   },
-  "keywords": [
-    "cli",
-    "quickbuild"
-  ],
-  "files": [
-    "bin/",
-    "src/",
-    "templates/"
-  ]
+  "bugs": {
+    "url": "https://github.com/abircb/quickbuild/issues"
+  },
+  "bin": "bin/quickbuild"
 }

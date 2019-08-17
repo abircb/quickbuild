@@ -46,7 +46,6 @@ async function createLicense(options) {
   }
   try {
     const license = await generateLicense(options)
-    console.log(license.name)
     const licenseContent = license.licenseText
       .replace('<year>', new Date().getFullYear())
       .replace('<copyright holders>', `${options.name} (${options.email})`);

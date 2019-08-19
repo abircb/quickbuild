@@ -3,11 +3,11 @@ import {
 } from './main'
 import {
   usageInfo, errorInfo
-} from '../lib/usage';
+} from '../lib/usage'
 const arg = require('arg')
 const inquirer = require('inquirer')
 
-function parseArgumentsIntoOptions(rawArgs) {
+function parseArgumentsIntoOptions (rawArgs) {
   try {
     const args = arg({
       '--help': Boolean,
@@ -41,7 +41,7 @@ function parseArgumentsIntoOptions(rawArgs) {
       license_Apache: args['--apache'] || false,
       license_BSD: args['--bsd'] || false,
       unlicensed: args['--unlicensed'] || false,
-      template: args._[0],
+      template: args._[0]
     }
   } catch (err) {
     errorInfo(err.message)
@@ -49,14 +49,14 @@ function parseArgumentsIntoOptions(rawArgs) {
   }
 }
 
-async function checkForTerminatingOptions(options) {
-  if(options.help) {
+async function checkForTerminatingOptions (options) {
+  if (options.help) {
     usageInfo()
     process.exit(1)
   }
 }
 
-async function promptForMissingOptions(options) {
+async function promptForMissingOptions (options) {
   const defaultTemplate = 'quickestbuild'
   if (options.skipPrompts) {
     return {
@@ -73,7 +73,7 @@ async function promptForMissingOptions(options) {
       name: 'projectName',
       type: 'input',
       message: 'Project name:',
-      validate: function(input) {
+      validate: function (input) {
         if (/^([A-Za-z\-\_\d])+$/.test(input)) return true
         else return 'Name may only include letters, numbers, underscores and hashes'
       }
@@ -120,7 +120,7 @@ async function promptForMissingOptions(options) {
   }
 }
 
-export async function cli(args) {
+export async function cli (args) {
   let options = await parseArgumentsIntoOptions(args)
   await checkForTerminatingOptions(options)
   options = await promptForMissingOptions(options)

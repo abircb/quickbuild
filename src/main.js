@@ -62,7 +62,7 @@ async function initGit (options) {
     cwd: options.targetDirectory
   })
   if (result.failed) {
-    return Promise.reject(new Error('Failed to initialize git'))
+    return Promise.reject(new Error('%s Invalid project structure', chalk.red.bold('ERROR')))
   }
 }
 

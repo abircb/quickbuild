@@ -75,7 +75,7 @@ async function promptForMissingOptions (options) {
       message: 'Project name:',
       validate: function (input) {
         if (/^([A-Za-z\-\_\d])+$/.test(input)) return true
-        else return 'Name may only include letters, numbers, underscores and hashes'
+        else return 'fatal: Name may only include letters, numbers, underscores and hashes'
       }
     })
   }

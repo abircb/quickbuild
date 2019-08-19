@@ -2,11 +2,10 @@ import {
   createProject
 } from './main'
 import {
-  usageInfo
+  usageInfo, errorInfo
 } from '../lib/usage';
 const arg = require('arg')
 const inquirer = require('inquirer')
-
 
 function parseArgumentsIntoOptions(rawArgs) {
   try {
@@ -45,7 +44,14 @@ function parseArgumentsIntoOptions(rawArgs) {
       template: args._[0],
     }
   } catch (err) {
-    usageInfo(err.message)
+    errorInfo(err.message)
+    process.exit(1)
+  }
+}
+
+async function checkForTerminatingOptions(options) {
+  if(options.help) {
+    usageInfo()
     process.exit(1)
   }
 }
@@ -116,6 +122,7 @@ async function promptForMissingOptions(options) {
 
 export async function cli(args) {
   let options = await parseArgumentsIntoOptions(args)
+  await checkForTerminatingOptions(options)
   options = await promptForMissingOptions(options)
   await createProject(options)
 }

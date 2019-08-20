@@ -1,0 +1,31 @@
+{
+  "manifest_version": 1,
+  "name": "",
+  "description": "",
+  "version": "1.0.1",
+  "icons": {
+    "128": "icons/",
+    "48": "icons/",
+    "16": "icons/"
+  },
+  "default_locale": "en",
+  "browser_action": {
+    "default_icon": {
+      "128": "icons/",
+      "48": "icons/",
+      "16": "icons/"
+    },
+    "default_title": "",
+    "default_popup": ""
+  },
+  "permissions": [
+  	"identity",
+  	"notifications"
+  	/* boilerplate - delete if not required for you application" */
+  ],
+  
+  "content_security_policy": ""
+}
+/*
+  More here: https://developer.chrome.com/extensions/manifest
+*/

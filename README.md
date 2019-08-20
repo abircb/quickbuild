@@ -45,6 +45,25 @@ $ quickbuild --help
     $ quickbuild -n "some project" --git --apache
 ```
 
+## Available templates
+<ul>
+  <li><a href="./templates/Express.js server">Express.js server</a></li>
+  <li><a href="./templates/Node.js server">Node.js server</a></li>
+  <li><a href="./templates/Node.js server (advanced)">Node.js server (Advanced)</a></li>
+  <li><a href="./templates/Electron App Quick Start">Electron App Quick Start</a></li>
+  <li><a href="./templates/Electron App (Advanced)">Electron App (Advanced)</a></li>
+  <li><a href="./templates/Static Webpage">Static Webpage</a></li>
+  <li><a href="./templates/React-Redux">React-Redux application</a></li>
+  <li><a href="./templates/jQuery Plugin">jQuery Plugin</a></li>
+  <li><a href="./templates/ECMAScript 6">ECMAScript 6</a></li>
+  <li><a href="./templates/Chrome Extension">Chrome Extension</a></li>
+  <li><a href="./templates/Firefox Extension">Firefox Extension</a></li>
+  <li><a href="./templates/Crossover Extension">Cross-browser Extension</a></li>
+  <li><a href="./templates/Atom UI">Atom UI theme template</a></li>
+  <li><a href="./templates/Typescript">Typescript</a></li>
+  <li><a href="./templates/quickestbuild">quickestbuild</a></li>
+</ul>
+
 ## Prerequisite
 <ul>
   <li>Node.js 8 or later</li>

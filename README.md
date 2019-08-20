@@ -26,16 +26,16 @@ $ quickbuild --help
     $ quickbuild <option>
 
   Options
-   -v, --version         output the version number
-       --verbose         enable verbose mode
-   -q, --quickestbuild   create generic boilerplate
-   -n, --name            enter your project name
-   -i, --install         install project dependencies
-   -g, --git             initialize git
-       --mit             add MIT license
-       --apache          add Apache 2.0 license
-       --bsd             add BSD 2-Clause license
-   -u, --unlicensed      create an unlicensed project
+   -v, --version           output the version number
+       --verbose           enable verbose mode
+   -q, --quickestbuild     create generic boilerplate
+   -n, --name              enter your project name
+   -i, --install           install project dependencies
+   -g, --git               initialize git
+       --mit               add MIT license
+       --apache            add Apache 2.0 license
+       --bsd               add BSD 2-Clause license
+   -u, --unlicensed        create an unlicensed project
 
   Examples
     $ quickbuild

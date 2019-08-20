@@ -17,10 +17,36 @@ Pass the following argument to install dependencies for your project:
 $ quickbuild --install
 ```
 
+## Usage
+
+```cli 
+$ quickbuild --help
+
+  Usage
+    $ quickbuild <option>
+
+  Options
+    --version, -v         output the version number
+    --verbose             enable verbose mode
+    --quickestbuild, -q   create generic boilerplate
+    --name, -n            enter your project name
+    --install, -i         install project dependencies
+    --git, -g             initialize git
+    --mit                 add MIT license
+    --apache              add Apache 2.0 license
+    --bsd                 add BSD 2-Clause license
+    --unlicensed, -u      create unlicensed project
+
+  Examples
+    $ quickbuild
+    $ quickbuild --git
+    $ quickbuild --git --bsd
+    $ quickbuild -u -g --install --verbose
+    $ quickbuild -n "some project" --git --apache
+```
+
 ## Prerequisite
 <ul>
   <li>Node.js 8 or later</li>
   <li>Git 2.11 or later</li>
 </ul>
-
-

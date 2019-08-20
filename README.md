@@ -11,8 +11,16 @@ The quickest way to get started with quickbuild is to utilize the executable wit
 ```cli
 $ quickbuild
 ```
-Pass the following argument to install dependacies for your project:
+Pass the following argument to install dependencies for your project:
 
 ```cli
 $ quickbuild --install
 ```
+
+## Prerequisite
+<ul>
+  <li>Node.js 8 or later</li>
+  <li>Git 2.11 or later</li>
+</ul>
+
+

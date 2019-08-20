@@ -1,6 +1,7 @@
 [![dependencies Status](https://david-dm.org/abircb/quickbuild/status.svg)](https://david-dm.org/abircb/quickbuild)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Gitter](https://badges.gitter.im/quickbuild-npm/community.svg)](https://gitter.im/quickbuild-npm/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![badgen.net](https://badgen.net/badge/libraries/io/blue)](https://libraries.io/github/abircb/quickbuild)
 
 # quickbuild
 A mature, feature-complete application generator with an emphasis on speed.

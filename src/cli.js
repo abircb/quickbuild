@@ -40,6 +40,7 @@ function parseArgumentsIntoOptions (rawArgs) {
       license_MIT: args['--mit'] || false,
       license_Apache: args['--apache'] || false,
       license_BSD: args['--bsd'] || false,
+      licensed: args['--mit'] || args['--apache'] || args['--bsd'],
       unlicensed: args['--unlicensed'] || false,
       template: args._[0]
     }
@@ -99,7 +100,7 @@ async function promptForMissingOptions (options) {
     })
   }
 
-  if (!options.license_MIT && !options.license_Apache && !options.license_BSD && !options.unlicensed) {
+  if (!options.licensed && !options.unlicensed) {
     questions.push({
       type: 'list',
       name: 'license',
@@ -115,7 +116,7 @@ async function promptForMissingOptions (options) {
     template: options.template || answers.template,
     git: options.git || answers.git,
     projectName: options.projectName || answers.projectName,
-    license: options.license || options.license_BSD || options.license_MIT || options.license_Apache || answers.license,
+    license: options.license_BSD || options.license_MIT || options.license_Apache || answers.license,
     unlicensed: options.unlicensed
   }
 }

@@ -6,12 +6,12 @@
 A mature, feature-complete application generator with an emphasis on speed.
 
 ## Quick Start
-The quickest way to get started with quickbuild is to utilize the executable without arguments and launch the interactive UI that guides you through creating a new application:
+The quickest way to get started with quickbuild is to utilize the executable without arguments. This will launch an interactive UI that guides you through creating a new application
 
 ```cli
 $ quickbuild
 ```
-Pass the following argument to install dependencies for your project:
+Pass the following argument to install dependencies for your project
 
 ```cli
 $ quickbuild --install

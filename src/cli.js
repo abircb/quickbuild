@@ -2,7 +2,7 @@ import {
   createProject
 } from './main'
 import {
-  usageInfo, errorInfo
+  usageInfo, errorInfo, versionInfo
 } from '../lib/usage'
 const arg = require('arg')
 const inquirer = require('inquirer')
@@ -12,6 +12,7 @@ function parseArgumentsIntoOptions (rawArgs) {
     const args = arg({
       '--help': Boolean,
       '--verbose': Boolean,
+      '--version': Boolean,
       '--quickestbuild': Boolean,
       '--name': String,
       '--git': Boolean,
@@ -20,11 +21,12 @@ function parseArgumentsIntoOptions (rawArgs) {
       '--apache': Boolean,
       '--bsd': Boolean,
       '--unlicensed': Boolean,
+      '-h': '--help',
+      '-v': '--version',
+      '-q': '--quickestbuild',
       '-n': '--name',
       '-g': '--git',
-      '-q': '--quickestbuild',
       '-i': '--install',
-      '-v': '--verbose',
       '-u': '--unlicensed'
     }, {
       argv: rawArgs.slice(2),
@@ -32,6 +34,7 @@ function parseArgumentsIntoOptions (rawArgs) {
     })
     return {
       help: args['--help'] || false,
+      version: args['--version'] || false,
       verbose: args['--verbose'] || false,
       skipPrompts: args['--quickestbuild'] || false,
       projectName: args['--name'] || undefined,
@@ -53,6 +56,10 @@ function parseArgumentsIntoOptions (rawArgs) {
 async function checkForTerminatingOptions (options) {
   if (options.help) {
     usageInfo()
+    process.exit(1)
+  }
+  if(options.version) {
+    versionInfo()
     process.exit(1)
   }
 }

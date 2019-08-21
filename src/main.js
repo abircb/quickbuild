@@ -58,7 +58,7 @@ async function createLicense (options) {
 }
 
 async function initGit (options) {
-  const result = await execa('git', ['init'], {
+    const result = await execa('git', ['init'], {
     cwd: options.targetDirectory
   })
   if (result.failed) {
@@ -124,7 +124,7 @@ export async function createProject (options) {
     }
   )
 
-  await tasks.run()
+  await tasks.run().catch((error) => {console.log('An error occured while creating your project. That\'s all we know\nIf this persists, raise an issue on https://github.com/abircb/quickbuild')})
   console.log('%s Project ready', chalk.green.bold('DONE'))
   return true
 }

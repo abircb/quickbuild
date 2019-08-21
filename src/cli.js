@@ -129,8 +129,13 @@ async function promptForMissingOptions (options) {
 }
 
 export async function cli (args) {
-  let options = await parseArgumentsIntoOptions(args)
-  await checkForTerminatingOptions(options)
-  options = await promptForMissingOptions(options)
-  await createProject(options)
+  try {
+    let options = await parseArgumentsIntoOptions(args)
+    await checkForTerminatingOptions(options)
+    options = await promptForMissingOptions(options)
+    await createProject(options)
+  }
+  catch(error) {
+    console.log('An error occured while creating your project. That\'s all we know\nIf this persists, raise an issue on https://github.com/abircb/quickbuild')
+  }
 }

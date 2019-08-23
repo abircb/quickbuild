@@ -6,6 +6,12 @@
 # quickbuild
 A mature, feature-complete application generator with an emphasis on speed.
 
+## Installation
+
+```cli
+$ npm install quickbuild -g
+```
+
 ## Quick Start
 The quickest way to get started with quickbuild is to utilize the executable without arguments. This will launch an interactive UI that guides you through creating a new application
 

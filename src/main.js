@@ -70,7 +70,7 @@ export async function createProject (options) {
   options = {
     ...options,
     targetDirectory: path.join(process.cwd(), options.projectName),
-    email: 'therandomdevtools@gmail.com',
+    email: 'therandomdevtoolsproject@gmail.com',
     name: 'The Random DevTools Project'
   }
 

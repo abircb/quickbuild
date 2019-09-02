@@ -1,5 +1,5 @@
 [![npm version](https://badge.fury.io/js/quickbuild.svg)](https://badge.fury.io/js/quickbuild)
-![npm downloads](https://img.shields.io/npm/dw/quickbuild)
+![npm downloads](https://img.shields.io/npm/dm/quickbuild)
 [![dependencies Status](https://david-dm.org/abircb/quickbuild/status.svg)](https://david-dm.org/abircb/quickbuild)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![badgen.net](https://badgen.net/badge/libraries/io/blue)](https://libraries.io/github/abircb/quickbuild)

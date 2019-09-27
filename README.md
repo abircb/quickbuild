@@ -56,6 +56,7 @@ $ quickbuild --help
 
 ## Available templates
 <ul>
+   <li><a href="./templates/AngularJS App">AngularJS App</a>: An application skeleton for a typical <a href="https://angularjs.org/">AngularJS</a> web app that is preconfigured to install the AngularJS framework and a bunch of development and testing tools for instant web development gratification. Based on the official<a href="https://github.com/angular/angular-seed"> AngularJS Seed App</a>.</li>
   <li><a href="./templates/Express.js server">Express.js server</a>: An Express application skeleton</li>
   <li><a href="./templates/Node.js server">Node.js server</a>: A simple, trivial Node.js server</li>
   <li><a href="./templates/Node.js server (advanced)">Node.js server (Advanced)</a>: An advanced Node.js Project structure</li>

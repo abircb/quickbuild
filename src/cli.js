@@ -93,7 +93,7 @@ async function promptForMissingOptions (options) {
       type: 'list',
       name: 'template',
       message: 'Choose a project structure',
-      choices: ['Atom UI', 'Chrome Extension', 'Firefox Extension', 'Crossover Extension', 'Electron App Quick Start', 'Electron App (Advanced)', 'ECMAScript 6', 'Express.js server', 'jQuery Plugin', 'Node.js server (advanced)', 'Node.js server', 'React-Redux', 'Static Webpage', 'Typescript'],
+      choices: ['AngularJS App', 'Atom UI', 'Chrome Extension', 'Firefox Extension', 'Crossover Extension', 'Electron App Quick Start', 'Electron App (Advanced)', 'ECMAScript 6', 'Express.js server', 'jQuery Plugin', 'Node.js server (advanced)', 'Node.js server', 'React-Redux', 'Static Webpage', 'Typescript'],
       default: defaultTemplate
     })
   }

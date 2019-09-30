@@ -1,6 +1,6 @@
 {
   "name": "quickbuild",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "description": "A mature, feature-complete application generator with an emphasis on speed",
   "repository": "https://github.com/abircb/quickbuild.git",
   "main": "src/index.js",

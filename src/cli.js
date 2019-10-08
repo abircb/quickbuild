@@ -112,7 +112,7 @@ async function promptForMissingOptions (options) {
       type: 'list',
       name: 'license',
       message: 'Choose a LICENSE',
-      choices: ['Apache License 2.0', 'Academic Free License v3.0', 'MIT License', 'BSD 2-Clause', 'CC-BY-2.0', 'GNU General Public License v3.0', 'Linux OpenIB', 'Microsoft Public License', 'Custom', 'Unlicensed'],
+      choices: ['Apache License 2.0', 'Academic Free License v3.0', 'MIT License', 'BSD 2-Clause', 'CC-BY-2.0', 'GNU General Public License v3.0', 'Linux OpenIB', 'Microsoft Public License', 'Custom'],
       default: false
     })
   }

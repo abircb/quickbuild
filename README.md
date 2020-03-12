@@ -63,6 +63,8 @@ $ quickbuild --help
   <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/Electron App (Advanced)">Electron App (Advanced)</a>: A desktop app that interactively- and with sample code- demonstrates core features of the Electron API. Based on <a href="https://github.com/electron/electron-api-demos">Electron API Demos</a></li>
   <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/Static Webpage">Static Webpage</a>: A simple webpage template</li>
   <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/React-Redux">React-Redux application</a>: A React-Redux application orgranised by nature. From the <a href="https://redux.js.org/advanced/example-reddit-api">Redux Book</a></li>
+  <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/React">React application</a>: A highly scalable, simple React boilerplate. From the official <a href="https://github.com/react-boilerplate/react-boilerplate">React Boilerplate project</a>.</li>
+  <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/Flutter%20Application">Flutter</a>: A very simple demo <a href="https://github.com/SimpleBoilerplates/Flutter">Flutter boilerplate</a> project with an existing sign-in/sign-up feature.</li>
   <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/jQuery Plugin">jQuery Plugin</a>: A jQuery plugin project template based on jQuery Boilerplate</li>
   <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/ECMAScript 6">ECMAScript 6</a>: A template for front end projects in ES6</li>
   <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/Chrome Extension">Chrome Extension</a>: A simple Chrome extension template</li>
@@ -75,6 +77,6 @@ $ quickbuild --help
 
 ## Prerequisite
 <ul>
-  <li>Node.js 8 or later</li>
+  <li>Node.js 4 or later</li>
   <li>Git 2.11 or later</li>
 </ul>

@@ -57,8 +57,6 @@ $ quickbuild --help
 <ul>
    <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/AngularJS App">AngularJS App</a>: An application skeleton for a typical <a href="https://angularjs.org/">AngularJS</a> web app that is preconfigured to install the AngularJS framework and a bunch of development and testing tools for instant web development gratification. Based on the official<a href="https://github.com/angular/angular-seed"> AngularJS Seed App</a>.</li>
   <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/Express.js server">Express.js server</a>: An Express application skeleton</li>
-  <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/Node.js server">Node.js server</a>: A simple, trivial Node.js server</li>
-  <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/Node.js server (advanced)">Node.js server (Advanced)</a>: An advanced Node.js Project structure</li>
   <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/Electron App Quick Start">Electron App Quick Start</a>: A minimal Electron application to quick-start your development. Based on Electron's <a href="https://github.com/electron/electron-quick-start">project</a> of the same name</li>
   <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/Electron App (Advanced)">Electron App (Advanced)</a>: A desktop app that interactively- and with sample code- demonstrates core features of the Electron API. Based on <a href="https://github.com/electron/electron-api-demos">Electron API Demos</a></li>
   <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/Static Webpage">Static Webpage</a>: A simple webpage template</li>

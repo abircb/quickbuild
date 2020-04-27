@@ -3,7 +3,7 @@ import {
 } from './main'
 import {
   usageInfo, errorInfo, versionInfo
-} from '../lib/usage'
+} from '../helpers/usage'
 const arg = require('arg')
 const inquirer = require('inquirer')
 
@@ -93,7 +93,7 @@ async function promptForMissingOptions (options) {
       type: 'list',
       name: 'template',
       message: 'Choose a project structure',
-      choices: ['AngularJS App', 'Atom UI', 'Chrome Extension', 'Firefox Extension', 'Crossover Extension', 'Electron App Quick Start', 'Electron App (Advanced)', 'React-Redux', 'React', 'Flutter Application', 'ECMAScript 6', 'Express.js server', 'jQuery Plugin', 'Static Webpage', 'Typescript'],
+      choices: ['AngularJS App', 'Atom UI', 'Chrome Extension', 'Firefox Extension', 'Crossover Extension', 'Electron App Quick Start', 'Electron App (Advanced)', 'React-Redux', 'React', 'Flutter Application', 'Express.js server', 'jQuery Plugin', 'Static Webpage', 'Typescript-Node Web App'],
       default: defaultTemplate
     })
   }

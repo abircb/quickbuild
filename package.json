@@ -21,7 +21,7 @@
     "bin/",
     "src/",
     "templates/",
-    "lib/"
+    "helpers/"
   ],
   "dependencies": {
     "arg": "^4.1.3",

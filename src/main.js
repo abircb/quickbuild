@@ -3,7 +3,7 @@ import {
 } from 'pkg-install'
 import {
   generateLicense
-} from '../lib/license'
+} from '../helpers/license'
 import {
   promisify
 } from 'util'
@@ -110,7 +110,7 @@ export async function createProject (options) {
       enabled: () => options.git
     },
     {
-      title: 'Installing dependencies',
+      title: 'Installing dependencies (this may take a while ..)',
       task: () =>
         projectInstall({
           cwd: options.targetDirectory

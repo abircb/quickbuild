@@ -34,7 +34,6 @@ async function createGitignore(options) {
 }
 
 async function createLicense(options) {
-  const CURR_DIR = process.cwd()
   const targetPath = path.join(options.targetDirectory, 'LICENSE')
   if (options.unlicensed) {
     return null
@@ -127,7 +126,7 @@ export async function createProject(options) {
     }
   )
 
-  await tasks.run().catch((error) => {
+  await tasks.run().catch(() => {
     console.log(
       "An error occured while creating your project. That's all we know\nIf this persists, raise an issue on https://github.com/abircb/quickbuild"
     )

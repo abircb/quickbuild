@@ -39,5 +39,9 @@
   "bugs": {
     "url": "https://github.com/abircb/quickbuild/issues"
   },
-  "bin": "bin/quickbuild"
+  "bin": "bin/quickbuild",
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "prettier": "^2.0.5"
+  }
 }

@@ -96,10 +96,6 @@ export async function createProject(options) {
         task: () => copyTemplateFiles(options),
       },
       {
-        title: 'Creating gitignore',
-        task: () => createGitignore(options),
-      },
-      {
         title: 'Creating LICENSE',
         task: () => createLicense(options),
         enabled: () => !options.unlicensed,
@@ -107,6 +103,11 @@ export async function createProject(options) {
       {
         title: 'Initializing git',
         task: () => initGit(options),
+        enabled: () => options.git,
+      },
+      {
+        title: 'Creating gitignore',
+        task: () => createGitignore(options),
         enabled: () => options.git,
       },
       {

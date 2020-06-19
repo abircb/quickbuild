@@ -107,7 +107,7 @@ async function promptForMissingOptions(options) {
         'Express.js server',
         'jQuery Plugin',
         'Static Webpage',
-        'Typescript-Node Web App',
+        'Typescript-Node',
       ],
       default: defaultTemplate,
     })

@@ -4,8 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
-djangorestframework = "*"
+django = ">=2.2.13"
+djangorestframework = ">=3.9.1"
 gunicorn = "*"
 whitenoise = "==4.0"
 dj-database-url = "*"

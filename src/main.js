@@ -20,17 +20,15 @@ async function copyTemplateFiles(options) {
   })
 }
 
-async function createGitignore(options) {
-  const file = fs.createWriteStream(
-    path.join(options.targetDirectory, '.gitignore'),
-    {
-      flags: 'a',
+async function deleteGitignore(options) {
+    const result = await execa('rm', ['.gitignore'], {
+      cwd: options.targetDirectory,
+    })
+    if (result.failed) {
+      return Promise.reject(
+        new Error('%s An error occured while initialising git', chalk.red.bold('ERROR'))
+      )
     }
-  )
-  return writeGitignore({
-    type: 'Node',
-    file: file,
-  })
 }
 
 async function createLicense(options) {
@@ -59,7 +57,7 @@ async function initGit(options) {
   })
   if (result.failed) {
     return Promise.reject(
-      new Error('%s Invalid project structure', chalk.red.bold('ERROR'))
+      new Error('%s An error occured while initialising git', chalk.red.bold('ERROR'))
     )
   }
 }
@@ -107,8 +105,8 @@ export async function createProject(options) {
       },
       {
         title: 'Creating gitignore',
-        task: () => createGitignore(options),
-        enabled: () => options.git,
+        task: () => deleteGitignore(options),
+        enabled: () => !options.git,
       },
       {
         title: 'Installing dependencies (this may take a while ..)',

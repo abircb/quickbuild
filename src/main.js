@@ -21,14 +21,17 @@ async function copyTemplateFiles(options) {
 }
 
 async function deleteGitignore(options) {
-    const result = await execa('rm', ['.gitignore'], {
-      cwd: options.targetDirectory,
-    })
-    if (result.failed) {
-      return Promise.reject(
-        new Error('%s An error occured while initialising git', chalk.red.bold('ERROR'))
+  const result = await execa('rm', ['.gitignore'], {
+    cwd: options.targetDirectory,
+  })
+  if (result.failed) {
+    return Promise.reject(
+      new Error(
+        '%s An error occured while initialising the project',
+        chalk.red.bold('ERROR')
       )
-    }
+    )
+  }
 }
 
 async function createLicense(options) {
@@ -57,7 +60,10 @@ async function initGit(options) {
   })
   if (result.failed) {
     return Promise.reject(
-      new Error('%s An error occured while initialising git', chalk.red.bold('ERROR'))
+      new Error(
+        '%s An error occured while initialising git',
+        chalk.red.bold('ERROR')
+      )
     )
   }
 }
@@ -104,7 +110,7 @@ export async function createProject(options) {
         enabled: () => options.git,
       },
       {
-        title: 'Creating gitignore',
+        title: 'Completing final checks',
         task: () => deleteGitignore(options),
         enabled: () => !options.git,
       },

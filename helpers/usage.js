@@ -1,12 +1,12 @@
 const chalk = require('chalk')
 const release = require('../package.json')
 
-export function errorInfo (errorMessage) {
+export function errorInfo(errorMessage) {
   console.error('%s ' + errorMessage, chalk.red.bold('ERROR'))
   usageInfo()
 }
 
-export function usageInfo () {
+export function usageInfo() {
   console.log('Usage \n    $ quickbuild <option>\n')
   console.log('Options')
   console.log('   -v, --version           output the version number')

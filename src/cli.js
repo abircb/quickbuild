@@ -52,7 +52,7 @@ function parseArgumentsIntoOptions(rawArgs) {
   }
 }
 
-async function checkForTerminatingOptions(options) {
+function checkForTerminatingOptions(options) {
   if (options.help) {
     usageInfo()
     process.exit(1)
@@ -159,8 +159,8 @@ async function promptForMissingOptions(options) {
 
 export async function cli(args) {
   try {
-    let options = await parseArgumentsIntoOptions(args)
-    await checkForTerminatingOptions(options)
+    let options = parseArgumentsIntoOptions(args)
+    checkForTerminatingOptions(options)
     options = await promptForMissingOptions(options)
     await createProject(options)
   } catch (error) {

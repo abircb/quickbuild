@@ -61,7 +61,6 @@ $ quickbuild --help
 <ul>
    <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/AngularJS App">AngularJS App</a>: An application skeleton for a typical <a href="https://angularjs.org/">AngularJS</a> web app that is preconfigured to install the AngularJS framework and a bunch of development and testing tools for instant web development gratification. Based on the official<a href="https://github.com/angular/angular-seed"> AngularJS Seed App</a>.</li>
   <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/Express.js server">Express.js server</a>: An Express application skeleton</li>
-  <li></li>
   <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/React">React application</a>: A highly scalable, simple React boilerplate. From the official <a href="https://github.com/react-boilerplate/react-boilerplate">React Boilerplate project</a>.</li>
   <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/Flutter%20Application">Flutter</a>: A very simple demo <a href="https://github.com/SimpleBoilerplates/Flutter">Flutter boilerplate</a> project with an existing sign-in/sign-up feature.</li>
   <li><a href="https://github.com/abircb/quickbuild/tree/master/templates/Django-Vue%20Application">Django-Vue application</a>: Vue, Yarn and Webpack handles all frontend logic and bundling assessments. Django and Django REST framework manage Data Models, Web API and serve static files.</li>

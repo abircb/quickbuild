@@ -82,8 +82,9 @@ async function promptForMissingOptions(options) {
       message: 'Project name:',
       validate: function (input) {
         if (/^([A-Za-z\-_\d])+$/.test(input)) return true
-        else
+        else {
           return 'error: name may only include letters, numbers, underscores and hashes\ntry again'
+        }
       },
     })
   }
@@ -97,6 +98,7 @@ async function promptForMissingOptions(options) {
         'AngularJS App',
         'Express.js server',
         'React',
+        'Django-React Application',
         'Django-Vue Application',
         'Flutter Application',
         'Electron App Quick Start',

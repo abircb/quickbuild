@@ -1,6 +1,6 @@
 {
   "name": "quickbuild",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "A mature, feature-complete application generator with an emphasis on speed",
   "repository": "https://github.com/abircb/quickbuild.git",
   "main": "src/index.js",
@@ -39,7 +39,9 @@
   "bugs": {
     "url": "https://github.com/abircb/quickbuild/issues"
   },
-  "bin": "bin/quickbuild",
+  "bin": {
+    "quickbuild": "bin/quickbuild"
+  },
   "devDependencies": {
     "eslint": "^7.8.1",
     "prettier": "^2.1.1"
